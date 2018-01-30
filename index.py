@@ -6,11 +6,7 @@ from app.preprotext.index import PreProText
 from app.myword2vec.index import MyWord2Vec
 
 pub_src = "./source"
-<<<<<<< HEAD
 init_input = pub_src + "/提前结清工单.xlsx"
-=======
-init_input = pub_src + "/input.txt"
->>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
 
 preProText = PreProText()
 myThuLac = MyThuLac()

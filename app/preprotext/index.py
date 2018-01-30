@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
 from openpyxl import load_workbook
-=======
->>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
 
 """ 预处理文件 """
 
@@ -41,37 +38,25 @@ class PreProText(object):
 
     def pre_pro_text(self):
         print '预处理文本 start'
-<<<<<<< HEAD
         wb = load_workbook(filename=self.__input_url)
         ws = wb.active
         fo = open(self.__output_url, 'w')
         for row in ws['F2:F11847']:
             for cell in row:
+                # print cell.value
                 if type(cell.value) is unicode:
                     cell = unicode.encode(cell.value, 'utf-8')
                 else:
                     cell = str(cell.value)
                 fo.write(cell + '\n')
-=======
-        fo = open(self.__output_url, 'w')
-        with open(self.__input_url, 'r') as fi:
-            for line in fi.readlines():
-                line = line.split(' ')[0] + '\n'
-                fo.write(line)
->>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
-        fo.close()
         print '输出到 ' + self.output_url
         print '预处理文本 done\n'
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     pub_src = "../../source"
     preProText = PreProText()
     # 预处理
     preProText.input_url = pub_src + "/提前结清工单.xlsx"
     preProText.output_url = pub_src + "/prepro_out.txt"
     preProText.pre_pro_text()
-=======
-    pass
->>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
