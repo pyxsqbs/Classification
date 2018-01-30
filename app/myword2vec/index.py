@@ -3,10 +3,14 @@
 
 from gensim.models.word2vec import Word2Vec
 from sklearn.feature_extraction.text import TfidfVectorizer
+<<<<<<< HEAD
 from sklearn.cluster import KMeans
 from sklearn.externals import joblib
 import numpy as np
 import os, math
+=======
+from numpy import *
+>>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
 
 """ 向量化 """
 
@@ -72,6 +76,7 @@ class MyWord2Vec(object):
                 if wv in word:
                     sentences_tf_idf[si].append(tf_idf[si][word.index(wv)])
                 else:
+<<<<<<< HEAD
                     sentences_tf_idf[si].append(0.0)
                     # print si + 1, len(sentences_tf_idf[si]), sentences_tf_idf[si]
 
@@ -163,6 +168,20 @@ class MyWord2Vec(object):
                 fw.write(str(line_x[i]))
                 # print line_x[i]
         fr.close()
+=======
+                    sentences_tf_idf[si].append(0.1)
+            print si + 1, len(sentences_tf_idf[si]), sentences_tf_idf[si]
+
+        model = Word2Vec(sentences_word, size=200, window=5, min_count=10, workers=4)
+
+        # if not os.path.exists('./model'):
+        #     os.mkdir('./model')
+        # model.save('./model/word.model')
+        # print 'model saved success to ./model/word.model'
+
+        print '输出到 ' + self.output_url
+        print '向量化 done\n'
+>>>>>>> 462e1f07bcea55733cc4fd15b92b17f756fa7e95
 
 
 if __name__ == '__main__':
